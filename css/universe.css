@@ -1214,7 +1214,8 @@ body {
     padding: 0; }
 
 #conversejs .flyout {
-  border: 0.5em solid #F4A261;
+  border: 0.8em solid #F4A261;
+  border-bottom: 1.6em solid #F4A261;
   border-radius: 0;
   bottom: 0;
   display: block;
@@ -1936,6 +1937,7 @@ body {
   #conversejs .chatroom .box-flyout {
     background-color: #E76F51;
     border: 0.8em solid #E76F51;
+    border-bottom: 1.6em solid #E76F51;
     width: -webkit-calc(100% - 200px);
     width: calc(100% - 200px); }
     #conversejs .chatroom .box-flyout .chatroom-body {
