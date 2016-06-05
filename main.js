@@ -14,7 +14,7 @@ if (typeof(require) === 'undefined') {
 require.config({
     baseUrl: '.',
     paths: {
-        "converse":                 "js/converse-custom/converse",
+        "converse-universe":       "src/universe",
 
         "backbone":                 "node_modules/converse.js/components/backbone/backbone",
         "backbone.browserStorage":  "node_modules/converse.js/components/backbone.browserStorage/backbone.browserStorage",

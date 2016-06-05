@@ -28,6 +28,7 @@ if (typeof define !== 'undefined') {
         "converse-ping",        // XEP-0199 XMPP Ping
         "converse-notification",// HTML5 Notifications
         "converse-headline",    // Support for headline messages
+        "converse-universe",    // Universe plugin for converse.js
         /* END: Removable components */
 
     ], function($, converse_api) {
