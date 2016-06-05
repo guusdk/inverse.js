@@ -1,6 +1,8 @@
 #conversejs {
     .chat-head-chatroom {
         background-color: $chatroom-head-color;
+        height: $chatroom-head-height;
+        font-size: 25px;
 
         .chatroom-topic {
             color: white;
@@ -19,7 +21,6 @@
         @include calc(width, '100% - #{$controlbox-width}');
         .box-flyout {
             border: 0.8em solid $chatroom-head-color;
-            border-bottom: 0.5em solid $chatroom-head-color;
             @include calc(width, '100% - #{$controlbox-width}');
             .chatroom-body {
                 height: 289px;

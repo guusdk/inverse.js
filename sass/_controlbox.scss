@@ -1,11 +1,11 @@
 #conversejs {
     #controlbox {
         .box-flyout {
-            border: 0.4em solid $controlbox-head-color;
-            border-bottom: 0.5em solid $controlbox-head-color;
+            border: 0;
             background-color: white;
             width: $controlbox-width;
             z-index: 1;
+            background-color: $controlbox-head-color;
         }
         
         width: $controlbox-width;
@@ -17,9 +17,10 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             color: $chat-head-inverse-text-color;
-            height: $chat-head-height;
+            height: $controlbox-head-height;
             margin: 0;
             padding: 6px 0 6px 0;
+            margin-top: 0.2em;
         }
         form.search-xmpp-contact {
             margin: 0;
@@ -258,8 +259,8 @@
                     color: $text-color;
                     display: block;
                     font-size: 12px;
-                    height: $chat-head-height - 1px;
-                    line-height: $chat-head-height - 1px;
+                    height: $controlbox-head-height - 1px;
+                    line-height: $controlbox-head-height - 1px;
                     margin: 0;
                     text-align: center;
                     text-decoration: none;
@@ -270,7 +271,7 @@
                     &.current:hover {
                         box-shadow: none;
                         border-bottom: 0;
-                        height: $chat-head-height;
+                        height: $controlbox-head-height;
                         cursor: default;
                         color: $text-color;
                     }
@@ -326,7 +327,7 @@
             text-align: center;
             width: 100%;
             height: 289px;
-            @include calc(height, '100% - #{$chat-head-height}');
+            @include calc(height, '100% - #{$controlbox-head-height}');
             overflow-y: auto;
             overflow-x: hidden;
             label {
