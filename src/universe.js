@@ -42,22 +42,38 @@
                 }
             },
 
-            RoomsPanel: {
-                createChatRoom: function (ev) {
-                    _.each(this._super.converse.chatboxviews.getAll(), function (view) {
-                        view.hide();
-                    });
-                    return this._super.createChatRoom.apply(this, arguments);
+            ChatBoxViews: {
+                showChat: function (attrs) {
+                    var chatbox = this.getChatBox(attrs);
+                    if (converse.connection.connected) {
+                        _.each(this._super.converse.chatboxviews.getAll(chatbox.get('id')), function (view) {
+                            view.model.save({'hidden': true});
+                        });
+                        chatbox.save({'hidden': false});
+                    }
+                    return this._super.showChat.apply(this, arguments);
                 }
             },
 
             RosterContactView: {
                 openChat: function (ev) {
                     _.each(this._super.converse.chatboxviews.getAll(), function (view) {
-                        view.hide();
+                        view.model.save({'hidden': true});
                     });
+                    this.model.save({'hidden': false});
                     return this._super.openChat.apply(this, arguments);
                 },
+            },
+
+            ChatBoxView: {
+                show: function (ev) {
+                    if (!this.model.get('hidden')) {
+                        _.each(this._super.converse.chatboxviews.xget(this.model.get('id')), function (view) {
+                            view.hide();
+                        });
+                        return this._super.show.apply(this, arguments);
+                    }
+                }
             }
         },
 
