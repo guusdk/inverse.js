@@ -60,10 +60,11 @@ dev: stamp-bower stamp-bundler
 .PHONY: css
 css: css/universe.css
 
-css/universe.css:: stamp-bundler stamp-bower sass
+css/universe.css:: stamp-bundler stamp-bower sass FORCE
 	$(SASS) -I ./components/bourbon/app/assets/stylesheets/ sass/universe.scss css/universe.css
 
 .PHONY: watch
 watch: stamp-bundler
 	$(SASS) --watch -I ./components/bourbon/app/assets/stylesheets/ sass/universe.scss:css/universe.css
 
+FORCE:
