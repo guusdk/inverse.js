@@ -27,6 +27,38 @@
             // relevant objects or classes.
             //
             // new functions which don't exist yet can also be added.
+            ControlBoxView: {
+                close: function (ev) {
+                    if (ev && ev.preventDefault) {
+                        ev.preventDefault();
+                    }
+                    // The controlbox cannot be closed.
+                },
+                hide: function (ev) {
+                    if (ev && ev.preventDefault) {
+                        ev.preventDefault();
+                    }
+                    // The controlbox cannot be hidden
+                }
+            },
+
+            RoomsPanel: {
+                createChatRoom: function (ev) {
+                    _.each(this._super.converse.chatboxviews.getAll(), function (view) {
+                        view.hide();
+                    });
+                    return this._super.createChatRoom.apply(this, arguments);
+                }
+            },
+
+            RosterContactView: {
+                openChat: function (ev) {
+                    _.each(this._super.converse.chatboxviews.getAll(), function (view) {
+                        view.hide();
+                    });
+                    return this._super.openChat.apply(this, arguments);
+                },
+            }
         },
 
         initialize: function () {
