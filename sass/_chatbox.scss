@@ -11,7 +11,7 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         color: #ffffff;
-        font-size: 100%;
+        font-size: 20px;
         height: $chat-head-height;
         margin: 0;
         padding: 5px;
@@ -59,23 +59,13 @@
         float: left;
         height: 100%;
         margin: 0;
-        width: $chat-width;
+        @include calc(width, '100% - #{$controlbox-width}');
         margin: 0;
         .box-flyout {
             background-color: white;
             height: $chat-height;
-            width: $chat-width;
+            @include calc(width, '100% - #{$controlbox-width}');
             z-index: 1;
-            @media screen and (max-height: $mobile-landscape-height) {
-                height: $mobile-chat-height;
-                width: $mobile-chat-width;
-                height: 100vh;
-            }
-            @media screen and (max-width: $mobile-portrait-length) {
-                height: $mobile-chat-height;
-                width: $mobile-chat-width;
-                height: 100vh;
-            }
         }
         .chat-title {
             color: $chat-head-text-color;
@@ -102,7 +92,6 @@
                 border-bottom-right-radius: 0;
             }
             border-top: 0;
-            height: 289px;
             @include calc(height, '100% - #{$chat-head-height}');
             p {
                 color: $text-color;

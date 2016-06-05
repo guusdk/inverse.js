@@ -2,7 +2,7 @@
     .chat-head-chatroom {
         background-color: $chatroom-head-color;
         height: $chatroom-head-height;
-        font-size: 25px;
+        font-size: 20px;
 
         .chatroom-topic {
             color: white;
@@ -23,7 +23,6 @@
             border: 0.8em solid $chatroom-head-color;
             @include calc(width, '100% - #{$controlbox-width}');
             .chatroom-body {
-                height: 289px;
                 @include border-bottom-radius($chatbox-border-radius);
                 @include calc(height, '100% - #{$chat-head-height}');
                 background-color: white;
