@@ -4,12 +4,11 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Universe.js | Welcome</title>
-    <link type="text/css" rel="stylesheet" media="screen" href="node_modules/converse.js/css/converse.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="css/universe.css" />
     <script data-main="main" src="node_modules/requirejs/require.js"></script>
     <script src="universe.js"></script>
 </head>
 <body>
-    <link rel="stylesheet" href="css/universe.css">
 
 <script>
     require(['universe'], function (converse) {
@@ -18,8 +17,6 @@
             i18n: locales['af'],
             auto_join_rooms: [
                 'discuss@conference.conversejs.org',
-                'prosody@conference.prosody.im',
-                'jdev@conference.jabber.org'
             ],
             auto_reconnect: true,
             bosh_service_url: 'https://conversejs.org/http-bind/', // Please use this connection manager only for testing purposes
