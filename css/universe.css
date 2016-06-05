@@ -1281,7 +1281,7 @@ body {
     display: block;
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 2em; }
+    height: 1em; }
     #conversejs .chatbox .chat-title a {
       color: white;
       width: 100%; }
@@ -1918,7 +1918,8 @@ body {
 #conversejs .chat-head-chatroom {
   background-color: #E76F51;
   height: 55px;
-  font-size: 20px; }
+  font-size: 20px;
+  margin-top: 0.3em; }
   #conversejs .chat-head-chatroom .chatroom-topic {
     color: white;
     font-size: 80%;
@@ -1927,12 +1928,12 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin: 0;
-    margin-top: 0.3em; }
+    margin: 0; }
 #conversejs .chatroom {
   width: -webkit-calc(100% - 200px);
   width: calc(100% - 200px); }
   #conversejs .chatroom .box-flyout {
+    background-color: #E76F51;
     border: 0.8em solid #E76F51;
     width: -webkit-calc(100% - 200px);
     width: calc(100% - 200px); }
