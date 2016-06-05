@@ -27,7 +27,7 @@ help:
 
 .PHONY: serve
 serve: stamp-npm
-	$(HTTPSERVE) -p 8000 -c -1
+	$(HTTPSERVE) -p 8001 -c -1
 
 ########################################################################
 ## Install dependencies

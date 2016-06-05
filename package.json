@@ -3,10 +3,8 @@
   "version": "0.0.1",
   "description": "Browser based XMPP instant messaging client",
   "main": "main.js",
-  "directories": {
-  },
-  "scripts": {
-  },
+  "directories": {},
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/jcbrand/universe.js.git"
@@ -34,5 +32,10 @@
     "phantom-jasmine": "0.1.8",
     "phantomjs": "~1.9.7-1",
     "po2json": "^0.3.0"
+  },
+  "dependencies": {
+    "converse.js": "^1.0.2",
+    "requirejs": "^2.2.0",
+    "requirejs-text": "^2.0.12"
   }
 }

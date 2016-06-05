@@ -1,18 +1,14 @@
 {
   "name": "universe.js",
-  "description": "Web-based XMPP/Jabber chat client written in javascript",
+  "description": "Fullpage XMPP chat client based on converse.js",
   "version": "0.0.1",
   "license": "MPL-2.0",
-  "devDependencies": {},
   "dependencies": {
-    "jquery": "1.11.0",
-    "converse": "master",
-    "almond": "~0.3.0",
-    "bourbon": "~4.2.3"
+    "requirejs-tpl-jcbrand": "*"
   },
   "exportsOverride": {},
-  "ignore": [],
-  "resolutions": {
-    "backbone": "~1.2.2"
-  }
+  "ignore": [
+    "docs",
+    "mockup"
+  ]
 }

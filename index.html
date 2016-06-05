@@ -4,117 +4,36 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Universe.js | Welcome</title>
-    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="node_modules/converse.js/css/converse.css" />
+    <script data-main="main" src="node_modules/requirejs/require.js"></script>
+    <script src="universe.js"></script>
 </head>
 <body>
-
-    <div class="off-canvas-wrap move-right" data-offcanvas>
-        <div class="inner-wrap">
-            <a class="left-off-canvas-toggle" href="#"><i class="fi-list"></i></a>
-
-            <!-- Off Canvas Menu -->
-            <aside class="left-off-canvas-menu">
-                <h3><i class="fa fa-group fa-1x"></i> Groups (56) <a href="#" class="create-chatroom"><i class="fi-plus"></i></a></h3>
-
-                <ul class="icon-bar vertical five-up">
-                    <li class="selected"><a class="item"><label>News</label></a></li>
-                    <li><a class="item" href="#"><label>Sport</label></a></li>
-                    <li><a class="item" href="#"><label>Random</label></a></li>
-                    <li><a class="item" href="#"><label>Tech</label></a></li>
-                </ul>
-
-                <h3><i class="fa fa-comments fa-1x"></i> Private <a href="#" class="create-chatroom"><i class="fi-plus"></i></a></h3>
-                <ul class="icon-bar vertical five-up">
-                    <li><a class="item" href="#"><label>Dan Carlin</label></a></li>
-                    <li><a class="item" href="#"><label>John Oliver</label></a></li>
-                    <li><a class="item" href="#"><label>Peter Parker</label></a></li>
-                    <li><a class="item" href="#"><label>Trevor Noah</label></a></li>
-                    <li><a class="item" href="#"><label>John Stewart</label></a></li>
-                </ul>
-            </aside>
-
-            <!-- main content goes here -->
-            <div class="top-bar">
-                <div class="row">
-                    <div class="top-bar-left">
-                        <ul class="dropdown menu" data-dropdown-menu>
-                            <li class="menu-text"># News</li>
-                        </ul>
-                    </div>
-                    <div class="top-bar-right">
-                        <ul class="menu">
-                            <li><input type="search" placeholder="Search"></li>
-                            <li><button type="button" class="button">Search</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <ul class="messages">
-                <li class="message row">
-                    <div class="avatar">
-                        <img src="http://zurb.com/ink/images/inky-computer.svg" alt="Inky">
-                    </div>
-                    <p>Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire.
-                    Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire.
-                    Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all
-                    possibilities in large societies to mathematics, allowing for the prediction of future events.
-                    </p>
-                </li>
-                <li class="row">
-                    <div class="avatar">
-                        <img src="http://zurb.com/ink/images/inky-computer.svg" alt="Inky">
-                    </div>
-                    <img src="https://ununsplash.imgix.net/photo-1429277005502-eed8e872fe52?fit=crop&fm=jpg&h=700&q=75&w=1050" alt="" />
-                </li>
-                <li class="row">
-                    <div class="avatar">
-                        <img src="http://zurb.com/ink/images/inky-computer.svg" alt="Inky">
-                    </div>
-                    <p>Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire.
-                    Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire.
-                    Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all
-                    possibilities in large societies to mathematics, allowing for the prediction of future events.
-                    </p>
-                </li>
-            </ul>
-
-            <div class="tabs-content" data-tabs-content="example-tabs">
-                <div class="tabs-panel is-active" id="panel1">
-                    <label>
-                        <textarea placeholder="message"></textarea>
-                    </label>
-                    <button class="button">Submit Message</button>
-                </div>
-            </div>
-
-            <!-- close the off-canvas menu -->
-            <a class="exit-off-canvas"></a>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-        $(document).ready(function () {
-            function sideNav() {
-                if ($(window).width() < 769) {
-                    $('.off-canvas-wrap').removeClass('move-right');
-                    $('.left-off-canvas-toggle').show();
-                } else {
-                    $('.off-canvas-wrap').addClass('move-right');
-                    $('.left-off-canvas-toggle').hide();
-                }  
-            }
-            $(window).resize(function() {
-                sideNav();
-            });
-            $(document).foundation();
-            sideNav();
-        });
-    </script>
     <link rel="stylesheet" href="css/universe.css">
+
+<script>
+    require(['universe'], function (converse) {
+        converse.initialize({
+            auto_away: 300,
+            i18n: locales['af'],
+            auto_join_rooms: [
+                'discuss@conference.conversejs.org',
+                'prosody@conference.prosody.im',
+                'jdev@conference.jabber.org'
+            ],
+            auto_reconnect: true,
+            bosh_service_url: 'https://conversejs.org/http-bind/', // Please use this connection manager only for testing purposes
+            keepalive: true,
+            message_carbons: true,
+            message_archiving: 'always',
+            play_sounds: true,
+            roster_groups: true,
+            show_controlbox_by_default: true,
+            chatstate_notification_blacklist: ['mulles@movim.eu'],
+            xhr_user_search: false,
+            debug: true
+        });
+    });
+</script>
 </body>
 </html>
