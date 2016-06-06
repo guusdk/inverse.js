@@ -2060,5 +2060,8 @@ body {
 
 #conversejs .chatbox.headlines .chat-head.chat-head-chatbox {
   background-color: #2A9D8F; }
+#conversejs .chatbox.headlines .flyout {
+  border: 1em solid #2A9D8F;
+  border-top: 0.8em solid #2A9D8F; }
 
 /*# sourceMappingURL=universe.css.map */
