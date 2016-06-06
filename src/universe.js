@@ -39,6 +39,21 @@
                         ev.preventDefault();
                     }
                     // The controlbox cannot be hidden
+                },
+
+                renderContactsPanel: function () {
+                    this._super.renderContactsPanel.apply(this, arguments);
+                    this.$el.removeClass("login");
+                    return this;
+                },
+
+                renderLoginPanel: function () {
+                    /* Also render a registration panel, when rendering the
+                     * login panel.
+                     */
+                    this._super.renderLoginPanel.apply(this, arguments);
+                    this.$el.addClass("login");
+                    return this;
                 }
             },
 
