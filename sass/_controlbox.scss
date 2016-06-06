@@ -1,17 +1,26 @@
 #conversejs {
     #controlbox {
+        min-width: $controlbox-width;
+        width: 200px;
+        display: none;
+        float: left;
+        margin-left: 0;
+        margin: 0;
+
+        &.login {
+            width: 100%;
+            .box-flyout {
+                width: 100%;
+            }
+        }
         .box-flyout {
             border: 0;
             background-color: white;
-            width: $controlbox-width;
+            min-width: $controlbox-width;
+            width: 200px;
             z-index: 1;
             background-color: $controlbox-head-color;
         }
-        
-        width: $controlbox-width;
-        display: none;
-        margin-left: 0;
-        margin: 0;
         .controlbox-head {
             background-color: $controlbox-head-color;
             border-top-left-radius: 0;
@@ -85,7 +94,8 @@
         }
 
         #converse-register, #converse-login {
-            margin-top: 2em;
+            margin: 30%;
+            margin-top: 15%;
             .login-anon {
                 height: auto;
                 white-space: normal;

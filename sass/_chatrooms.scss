@@ -22,10 +22,11 @@
         @include calc(width, '100% - #{$controlbox-width}');
         .box-flyout {
             background-color: $chatroom-head-color;
-            border: 0.8em solid $chatroom-head-color;
-            border-bottom: 1.6em solid $chatroom-head-color;
+            border: 1em solid $chatroom-head-color;
+            border-top: 0.8em solid $chatroom-head-color;
             @include calc(width, '100% - #{$controlbox-width}');
             .chatroom-body {
+                @include border-top-radius($chatbox-border-radius);
                 @include border-bottom-radius($chatbox-border-radius);
                 @include calc(height, '100% - #{$chat-head-height}');
                 background-color: white;
@@ -33,6 +34,7 @@
                 width: 100%;
 
                 .chat-area {
+                    border-top-left-radius: $chatbox-border-radius;
                     word-wrap: break-word; 
                     height: 100%;
                     @include calc(width, '100% - #{$controlbox-width}');
@@ -43,7 +45,7 @@
                     }
                     .chat-content {
                         // There's an annoying Chrome box-sizing bug which prevents us from adding 0.5em padding here.
-                        padding: 0 0.5em 0 0.5em;
+                        border-top-left-radius: $chatbox-border-radius;
                     }
                     &.full {
                         max-width: 100%;
@@ -63,13 +65,15 @@
                     background-color: white;
                     overflow: hidden;
                     border-left: 1px solid $text-color;
+                    border-top-right-radius: $chatbox-border-radius;;
                     border-bottom-right-radius: $chatbox-border-radius;
                     height: 100%;
+                    padding: 1em 0.5em;
                     &.hidden {
                         display: none;
                     }
                     .occupants-heading {
-                        padding: 0.3em;
+                        font-size: 15px;
                         font-weight: bold;
                     }
                     .occupant-list {
@@ -81,7 +85,7 @@
                         li {
                             cursor: default;
                             display: block;
-                            font-size: 12px;
+                            font-size: 13px;
                             overflow: hidden;
                             padding: 2px 5px;
                             text-overflow: ellipsis;
@@ -114,20 +118,23 @@
 
         .room-invite {
             margin: 0.3em;
-            .invited-contact {
-                margin: -1px 0 0 -1px;
+            span {
                 width: 100%;
-                border: 1px solid #999;
-                &.tt-input {
+                .invited-contact {
+                    margin: 0 0 0.5em -1px;
                     width: 100%;
-                    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkBCjE0uzKkOgAAAidJREFUKM+N0k+IEnEUB/D3cyscdagkWpHV0WGWREXm0AgOGkSJ07kh2UXYU5cOewm6Bp0KXG/tpSCv6hyEFQIhMEaE3yERYfwTOoqKGLQxDAbqYadLgu7J7/XxeY/3ez8EACDLsgljfMfj8ZxUKhXXYDAAnueBoqgyAMipVOovXAuSZdnUaDQeDofDs16vFyUIAjRNUwmCoG02G1AUdZ5IJN7GYrHfm3AvEAjcnUwmX0ajUdRqtV74fL6sruufKYoa6bp+fzabPUMI7ZfL5eImNHk8npNerxc1m80XHMe98fv9H3K5XDkSibxjWfb1arWaYoyPMMbCFqxUKi6CIODw8LDmdDq7oigaAACiKK5omv7KcdylpmlIkiTHFlRVFTRNUxVFqa/ROqIoGoqi5A3DgFartfU4Jp7ngSAI2uVyPZIk6dZmUZKk2w6H4xghBPF4HK7vWLbZbDCdTp+rqvpUkiS0RvV6/bTf7x8wDHMViURqm/AGAMgURZ232+1X1Wr102KxuEwmk3lZlo/7/f7BcrkkSZKs2e12tHXH/x/gHsY4jTE+0jQNGYYBCCFgGOaKJMkfjUaDZximGQ6HXzSbzZ+ZTMbY6oIxFgqFgqPT6YAgCMBxXM1ut6N0Op0fj8chi8XyjWXZ98Fg8DuCHZLNZh+USqWP8/n8idvt/hUKhV7u7QK9Xu8fmqanAJBQVXUfAGY7TQQAKBaLN8fjsdDtdh/run72Dzhf7XLe2UevAAAAAElFTkSuQmCC ) no-repeat right 3px center;
-                    &:focus {
-                        border-color: $chatroom-head-color;
+                    border: 1px solid #999;
+                    &.tt-input {
+                        width: 100%;
+                        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkBCjE0uzKkOgAAAidJREFUKM+N0k+IEnEUB/D3cyscdagkWpHV0WGWREXm0AgOGkSJ07kh2UXYU5cOewm6Bp0KXG/tpSCv6hyEFQIhMEaE3yERYfwTOoqKGLQxDAbqYadLgu7J7/XxeY/3ez8EACDLsgljfMfj8ZxUKhXXYDAAnueBoqgyAMipVOovXAuSZdnUaDQeDofDs16vFyUIAjRNUwmCoG02G1AUdZ5IJN7GYrHfm3AvEAjcnUwmX0ajUdRqtV74fL6sruufKYoa6bp+fzabPUMI7ZfL5eImNHk8npNerxc1m80XHMe98fv9H3K5XDkSibxjWfb1arWaYoyPMMbCFqxUKi6CIODw8LDmdDq7oigaAACiKK5omv7KcdylpmlIkiTHFlRVFTRNUxVFqa/ROqIoGoqi5A3DgFartfU4Jp7ngSAI2uVyPZIk6dZmUZKk2w6H4xghBPF4HK7vWLbZbDCdTp+rqvpUkiS0RvV6/bTf7x8wDHMViURqm/AGAMgURZ232+1X1Wr102KxuEwmk3lZlo/7/f7BcrkkSZKs2e12tHXH/x/gHsY4jTE+0jQNGYYBCCFgGOaKJMkfjUaDZximGQ6HXzSbzZ+ZTMbY6oIxFgqFgqPT6YAgCMBxXM1ut6N0Op0fj8chi8XyjWXZ98Fg8DuCHZLNZh+USqWP8/n8idvt/hUKhV7u7QK9Xu8fmqanAJBQVXUfAGY7TQQAKBaLN8fjsdDtdh/run72Dzhf7XLe2UevAAAAAElFTkSuQmCC ) no-repeat right 3px center;
+                        &:focus {
+                            border-color: $chatroom-head-color;
+                        }
                     }
-                }
-                &.tt-hint {
-                    color: transparent;
-                    background-color: white;
+                    &.tt-hint {
+                        color: transparent;
+                        background-color: white;
+                    }
                 }
             }
             .tt-dropdown-menu {
