@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Universe.js | Welcome</title>
+    <title>Inverse.js | Welcome</title>
     <link type="text/css" rel="stylesheet" media="screen" href="css/universe.css" />
     <script data-main="main" src="node_modules/requirejs/require.js"></script>
-    <script src="universe.js"></script>
+    <script src="inverse.js"></script>
 </head>
 <body>
 
 <script>
-    require(['universe'], function (converse) {
+    require(['inverse'], function (converse) {
         converse.initialize({
             auto_away: 300,
             i18n: locales['en'],
@@ -25,6 +25,7 @@
             message_archiving: 'always',
             play_sounds: true,
             roster_groups: true,
+            show_controlbox_by_default: true,
             chatstate_notification_blacklist: ['mulles@movim.eu'],
             debug: true
         });

@@ -7,10 +7,11 @@
 /*global Backbone, define, window */
 
 (function (root, factory) {
-    define("converse-universe", [
+    define("converse-inverse", [
             "converse-core",
             "converse-api",
             "converse-chatview",
+            "converse-controlbox",
             "converse-muc"
     ], factory);
 }(this, function (converse, converse_api) {
@@ -19,7 +20,7 @@
     var $ = converse_api.env.jQuery,
         _ = converse_api.env._;
 
-    converse_api.plugins.add('universe', {
+    converse_api.plugins.add('inverse', {
 
         overrides: {
             // overrides mentioned here will be picked up by converse.js's
@@ -60,8 +61,9 @@
             ChatBoxViews: {
                 showChat: function (attrs) {
                     var chatbox = this.getChatBox(attrs);
-                    if (converse.connection.connected) {
-                        _.each(this._super.converse.chatboxviews.getAll(chatbox.get('id')), function (view) {
+                    var converse = this._super.converse;
+                    if (converse.connection.authenticated) {
+                        _.each(converse.chatboxviews.getAll(chatbox.get('id')), function (view) {
                             view.model.save({'hidden': true});
                         });
                         chatbox.save({'hidden': false});
