@@ -14,7 +14,7 @@
     require(['universe'], function (converse) {
         converse.initialize({
             auto_away: 300,
-            i18n: locales['af'],
+            i18n: locales['en'],
             auto_join_rooms: [
                 'discuss@conference.conversejs.org',
             ],
@@ -25,9 +25,7 @@
             message_archiving: 'always',
             play_sounds: true,
             roster_groups: true,
-            show_controlbox_by_default: true,
             chatstate_notification_blacklist: ['mulles@movim.eu'],
-            xhr_user_search: false,
             debug: true
         });
     });
