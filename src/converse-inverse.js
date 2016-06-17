@@ -60,7 +60,7 @@
 
             ChatBoxViews: {
                 showChat: function (attrs) {
-                    var chatbox = this.getChatBox(attrs);
+                    var chatbox = this.getChatBox(attrs, true);
                     var converse = this._super.converse;
                     if (converse.connection.authenticated) {
                         _.each(converse.chatboxviews.getAll(chatbox.get('id')), function (view) {
