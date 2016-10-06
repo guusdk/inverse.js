@@ -43,7 +43,7 @@
                 },
 
                 renderContactsPanel: function () {
-                    this._super.renderContactsPanel.apply(this, arguments);
+                    this.__super__.renderContactsPanel.apply(this, arguments);
                     this.$el.removeClass("login");
                     return this;
                 },
@@ -52,7 +52,7 @@
                     /* Also render a registration panel, when rendering the
                      * login panel.
                      */
-                    this._super.renderLoginPanel.apply(this, arguments);
+                    this.__super__.renderLoginPanel.apply(this, arguments);
                     this.$el.addClass("login");
                     return this;
                 }
@@ -61,34 +61,37 @@
             ChatBoxViews: {
                 showChat: function (attrs) {
                     var chatbox = this.getChatBox(attrs, true);
-                    var converse = this._super.converse;
+                    var converse = this.__super__.converse;
                     if (converse.connection.authenticated) {
                         _.each(converse.chatboxviews.getAll(chatbox.get('id')), function (view) {
+                            if (view.model.get('id') === 'controlbox') {
+                                return;
+                            }
                             view.model.save({'hidden': true});
                         });
                         chatbox.save({'hidden': false});
                     }
-                    return this._super.showChat.apply(this, arguments);
+                    return this.__super__.showChat.apply(this, arguments);
                 }
             },
 
             RosterContactView: {
                 openChat: function (ev) {
-                    _.each(this._super.converse.chatboxviews.getAll(), function (view) {
+                    _.each(this.__super__.converse.chatboxviews.getAll(), function (view) {
                         view.model.save({'hidden': true});
                     });
                     this.model.save({'hidden': false});
-                    return this._super.openChat.apply(this, arguments);
+                    return this.__super__.openChat.apply(this, arguments);
                 },
             },
 
             ChatBoxView: {
                 show: function (ev) {
                     if (!this.model.get('hidden')) {
-                        _.each(this._super.converse.chatboxviews.xget(this.model.get('id')), function (view) {
+                        _.each(this.__super__.converse.chatboxviews.xget(this.model.get('id')), function (view) {
                             view.hide();
                         });
-                        return this._super.show.apply(this, arguments);
+                        return this.__super__.show.apply(this, arguments);
                     }
                 }
             }

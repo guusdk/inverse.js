@@ -34,7 +34,7 @@
     "po2json": "^0.3.0"
   },
   "dependencies": {
-    "converse.js": "^1.0.2",
+    "converse.js": "git@github.com:jcbrand/converse.js.git",
     "requirejs": "^2.2.0",
     "requirejs-text": "^2.0.12"
   }

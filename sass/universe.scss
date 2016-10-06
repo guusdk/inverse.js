@@ -6,7 +6,7 @@
  * Licensed under the Mozilla Public License
  */
 
-@import "../node_modules/converse.js/bourbon/bourbon";
+@import "../node_modules/converse.js/components/bourbon/app/assets/stylesheets/bourbon";
 @import "variables";
 @import "../node_modules/converse.js/sass/fonts";
 @import "normalize";
@@ -14,5 +14,6 @@
 @import "chatbox";
 @import "controlbox";
 @import "../node_modules/converse.js/sass/roster";
+@import "../node_modules/converse.js/sass/bookmarks";
 @import "chatrooms";
 @import "headline";
