@@ -11,10 +11,12 @@
 @import "../node_modules/converse.js/sass/fonts";
 @import "normalize";
 @import "core";
+@import "../node_modules/converse.js/sass/chatbox";
 @import "chatbox";
 @import "../node_modules/converse.js/sass/controlbox";
 @import "controlbox";
 @import "../node_modules/converse.js/sass/roster";
 @import "../node_modules/converse.js/sass/bookmarks";
+@import "../node_modules/converse.js/sass/chatrooms";
 @import "chatrooms";
 @import "headline";

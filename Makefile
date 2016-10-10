@@ -58,13 +58,13 @@ dev: stamp-bower stamp-bundler
 ## Builds
 
 .PHONY: css
-css: css/universe.css
+css: css/inverse.css
 
-css/universe.css:: stamp-bundler stamp-bower sass FORCE
-	$(SASS) -I ./components/bourbon/app/assets/stylesheets/ sass/universe.scss css/universe.css
+css/inverse.css:: stamp-bundler stamp-bower sass FORCE
+	$(SASS) -I ./components/bourbon/app/assets/stylesheets/ sass/inverse.scss css/inverse.css
 
 .PHONY: watch
 watch: stamp-bundler
-	$(SASS) --watch -I ./components/bourbon/app/assets/stylesheets/ sass/universe.scss:css/universe.css
+	$(SASS) --watch -I ./components/bourbon/app/assets/stylesheets/ sass/inverse.scss:css/inverse.css
 
 FORCE:
