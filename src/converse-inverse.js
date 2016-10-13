@@ -62,8 +62,8 @@
                 showChat: function (attrs) {
                     var chatbox = this.getChatBox(attrs, true);
                     var converse = this.__super__.converse;
-                    if (converse.connection.authenticated) {
-                        _.each(converse.chatboxviews.getAll(chatbox.get('id')), function (view) {
+                    if (!attrs.hidden && converse.connection.authenticated) {
+                        _.each(converse.chatboxviews.xget(chatbox.get('id')), function (view) {
                             if (view.model.get('id') === 'controlbox') {
                                 return;
                             }
@@ -90,6 +90,7 @@
                     if (!this.model.get('hidden')) {
                         _.each(this.__super__.converse.chatboxviews.xget(this.model.get('id')), function (view) {
                             view.hide();
+                            view.model.set({'hidden': true});
                         });
                         return this.__super__.show.apply(this, arguments);
                     }
