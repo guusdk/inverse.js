@@ -62,7 +62,6 @@ require.config({
         "converse-ping":            "node_modules/converse.js/src/converse-ping",
         "converse-register":        "node_modules/converse.js/src/converse-register",
         "converse-rosterview":      "node_modules/converse.js/src/converse-rosterview",
-        "converse-templates":       "node_modules/converse.js/src/converse-templates",
         "converse-vcard":           "node_modules/converse.js/src/converse-vcard",
 
         // Off-the-record-encryption
@@ -126,6 +125,7 @@ require.config({
         "action":                   "node_modules/converse.js/src/templates/action",
         "add_contact_dropdown":     "node_modules/converse.js/src/templates/add_contact_dropdown",
         "add_contact_form":         "node_modules/converse.js/src/templates/add_contact_form",
+        "avatar":                   "src/templates/avatar",
         "bookmark":                 "node_modules/converse.js/src/templates/bookmark",
         "bookmarks_list":           "node_modules/converse.js/src/templates/bookmarks_list",
         "change_status_message":    "node_modules/converse.js/src/templates/change_status_message",
