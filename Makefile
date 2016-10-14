@@ -34,6 +34,7 @@ serve: stamp-npm
 
 stamp-npm: package.json
 	npm install
+	cd node_modules/converse.js && make dev && cd ../../
 	touch stamp-npm
 
 stamp-bower: stamp-npm bower.json
@@ -53,6 +54,7 @@ clean:
 
 .PHONY: dev
 dev: stamp-bower stamp-bundler
+
 
 ########################################################################
 ## Builds
