@@ -1052,7 +1052,26 @@ body {
   height: 100%;
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #ffffff;
-  background-color: #211018; }
+  background-color: #17818B; }
+
+div.content {
+  height: 100vh;
+  width: 100vw; }
+  div.content .inner-content {
+    height: 100vh;
+    width: 100vw;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5%;
+    padding-left: -webkit-calc(5% + 250px);
+    padding-left: calc(5% + 250px); }
+    div.content .inner-content .brand-heading {
+      font-size: 600%;
+      margin-left: -10%; }
+    div.content .inner-content p.no-chats {
+      padding-right: 10%;
+      font-size: 120%; }
 
 #conversejs {
   width: 100%;
@@ -1546,12 +1565,14 @@ body {
 #conversejs .chatbox {
   height: 100%;
   margin: 0;
-  width: -webkit-calc(100% - 200px);
-  width: calc(100% - 200px);
+  width: -webkit-calc(100% - 250px);
+  width: calc(100% - 250px);
   margin: 0; }
   #conversejs .chatbox .box-flyout {
-    width: -webkit-calc(100% - 200px);
-    width: calc(100% - 200px); }
+    width: -webkit-calc(100% - 250px);
+    width: calc(100% - 250px);
+    box-shadow: none;
+    min-width: auto; }
   #conversejs .chatbox .chat-title {
     height: 1em; }
   #conversejs .chatbox .chat-content {
@@ -1874,7 +1895,7 @@ body {
     color: white; }
 
 #conversejs #controlbox {
-  min-width: 200px;
+  min-width: 250px;
   width: 200px;
   float: left;
   margin: 0; }
@@ -1885,7 +1906,7 @@ body {
   #conversejs #controlbox .box-flyout {
     border: 0;
     background-color: white;
-    min-width: 200px;
+    min-width: 250px;
     width: 200px;
     z-index: 1;
     background-color: #577BDD; }
@@ -2217,14 +2238,14 @@ body {
     font-size: 66%;
     margin-top: 3px; }
 #conversejs .chatroom {
-  width: -webkit-calc(100% - 200px);
-  width: calc(100% - 200px); }
+  width: -webkit-calc(100% - 250px);
+  width: calc(100% - 250px); }
   #conversejs .chatroom .box-flyout {
     background-color: #E76F51;
     border: 1em solid #E76F51;
     border-top: 0.8em solid #E76F51;
-    width: -webkit-calc(100% - 200px);
-    width: calc(100% - 200px); }
+    width: -webkit-calc(100% - 250px);
+    width: calc(100% - 250px); }
     #conversejs .chatroom .box-flyout .chatroom-body {
       border-top-left-radius: 0;
       border-top-right-radius: 0; }

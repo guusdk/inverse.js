@@ -3,7 +3,31 @@ body {
   height: 100%;
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #ffffff;
-  background-color: #211018;
+  background-color: #17818B;
+}
+
+div.content {
+    height: 100vh;
+    width: 100vw;
+
+    .inner-content {
+        height: 100vh;
+        width: 100vw;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        padding: 5%;
+        @include calc(padding-left, '5% + #{$controlbox-width}');
+
+        .brand-heading {
+            font-size: 600%;
+            margin-left: -10%;
+        }
+        p.no-chats {
+            padding-right: 10%;
+            font-size: 120%;
+        }
+    }
 }
 
 #conversejs {

@@ -16,6 +16,8 @@
         margin: 0;
         .box-flyout {
             @include calc(width, '100% - #{$controlbox-width}');
+            box-shadow: none;
+            min-width: auto;
         }
         .chat-title {
             height: 1em;
