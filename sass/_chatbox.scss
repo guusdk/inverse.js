@@ -1,4 +1,7 @@
 #conversejs {
+    .chatbox-btn {
+        font-size: $font-size-large;
+    }
     .flyout {
         border: 1em solid $chat-head-color;
         border-top: 0.8em solid $chat-head-color;

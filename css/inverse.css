@@ -1185,7 +1185,7 @@ div.content {
   #conversejs .activated {
     display: block !important; }
   #conversejs .pure-button {
-    border-radius: 0; }
+    border-radius: 4px; }
   #conversejs .button-primary {
     color: white;
     background-color: #2AC611; }
@@ -1553,6 +1553,8 @@ div.content {
       top: 0;
       left: 0; }
 
+#conversejs .chatbox-btn {
+  font-size: 16px; }
 #conversejs .flyout {
   border: 1em solid #F4A261;
   border-top: 0.8em solid #F4A261;
@@ -1896,6 +1898,12 @@ div.content {
   width: 200px;
   float: left;
   margin: 0; }
+  #conversejs #controlbox #login-dialog .brand-heading, #conversejs #controlbox #register .brand-heading {
+    margin: 10% 0 0 0;
+    font-size: 600%;
+    color: #577BDD; }
+  #conversejs #controlbox #login-dialog .converse-form, #conversejs #controlbox #register .converse-form {
+    margin-top: 4em; }
   #conversejs #controlbox.login {
     width: 100%; }
     #conversejs #controlbox.login .box-flyout {
@@ -1916,13 +1924,17 @@ div.content {
     margin-top: 15%; }
     #conversejs #controlbox #converse-register #available-chatrooms, #conversejs #controlbox #converse-login #available-chatrooms {
       padding: 0 1em 2em 1em; }
+    #conversejs #controlbox #converse-register input[type=submit], #conversejs #controlbox #converse-login input[type=submit] {
+      width: auto;
+      margin-top: 1.5em; }
   #conversejs #controlbox #controlbox-tabs {
     /* single tab */ }
     #conversejs #controlbox #controlbox-tabs li {
       width: 50%; }
       #conversejs #controlbox #controlbox-tabs li a {
         height: 62px;
-        line-height: 62px; }
+        line-height: 62px;
+        font-size: 16px; }
         #conversejs #controlbox #controlbox-tabs li a.current, #conversejs #controlbox #controlbox-tabs li a.current:hover {
           height: 63px; }
   #conversejs #controlbox .controlbox-pane {
