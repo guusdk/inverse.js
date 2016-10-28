@@ -139,6 +139,7 @@ require.config({
         "chatroom_nickname_form":   "node_modules/converse.js/src/templates/chatroom_nickname_form",
         "chatroom_password_form":   "node_modules/converse.js/src/templates/chatroom_password_form",
         "chatroom_sidebar":         "node_modules/converse.js/src/templates/chatroom_sidebar",
+        "chatroom_toolbar":         "node_modules/converse.js/src/templates/chatroom_toolbar",
         "chatrooms_tab":            "node_modules/converse.js/src/templates/chatrooms_tab",
         "chats_panel":              "node_modules/converse.js/src/templates/chats_panel",
         "choose_status":            "node_modules/converse.js/src/templates/choose_status",
