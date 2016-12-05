@@ -1057,7 +1057,8 @@ body {
 div.content {
   height: 100vh;
   width: 100vw;
-  position: fixed; }
+  position: fixed;
+  background-color: #17818B; }
   div.content .inner-content {
     text-align: center;
     padding: 7%;
@@ -1896,9 +1897,9 @@ div.content {
     color: #577BDD; }
   #conversejs #controlbox #login-dialog .converse-form, #conversejs #controlbox #register .converse-form {
     margin-top: 4em; }
-  #conversejs #controlbox.login {
+  #conversejs #controlbox.fullscreen {
     width: 100%; }
-    #conversejs #controlbox.login .box-flyout {
+    #conversejs #controlbox.fullscreen .box-flyout {
       width: 100%; }
   #conversejs #controlbox .box-flyout {
     border: 0;

@@ -28,6 +28,7 @@
             // relevant objects or classes.
             //
             // new functions which don't exist yet can also be added.
+
             ControlBoxView: {
                 close: function (ev) {
                     if (ev && ev.preventDefault) {
@@ -35,6 +36,7 @@
                     }
                     // The controlbox cannot be closed.
                 },
+
                 hide: function (ev) {
                     if (ev && ev.preventDefault) {
                         ev.preventDefault();
@@ -44,24 +46,25 @@
 
                 renderContactsPanel: function () {
                     this.__super__.renderContactsPanel.apply(this, arguments);
-                    this.$el.removeClass("login");
+                    this.$el.removeClass("fullscreen");
                     return this;
                 },
 
                 renderLoginPanel: function () {
-                    /* Also render a registration panel, when rendering the
-                     * login panel.
-                     */
                     this.__super__.renderLoginPanel.apply(this, arguments);
-                    this.$el.addClass("login");
+                    this.$el.addClass("fullscreen");
                     return this;
                 }
             },
 
             ChatBoxViews: {
                 showChat: function (attrs) {
-                    var chatbox = this.getChatBox(attrs, true);
+                    /* With inVerse, we only have one chat visible at any one
+                     * time. So before opening a chat, we make sure all other
+                     * chats are hidden.
+                     */
                     var converse = this.__super__.converse;
+                    var chatbox = this.getChatBox(attrs, true);
                     if (!attrs.hidden && converse.connection.authenticated) {
                         _.each(converse.chatboxviews.xget(chatbox.get('id')), function (view) {
                             if (view.model.get('id') === 'controlbox') {
@@ -77,7 +80,11 @@
 
             RosterContactView: {
                 openChat: function (ev) {
-                    _.each(this.__super__.converse.chatboxviews.getAll(), function (view) {
+                    /* With inVerse, we only have one chat visible at any one
+                     * time. So before opening a chat, we make sure all other
+                     * chats are hidden.
+                     */
+                    _.each(this.__super__.converse.chatboxviews.xget('controlbox'), function (view) {
                         view.model.save({'hidden': true});
                     });
                     this.model.save({'hidden': false});
@@ -87,6 +94,10 @@
 
             ChatBoxView: {
                 show: function (ev) {
+                    /* With inVerse, we only have one chat visible at any one
+                     * time. So before opening a chat, we make sure all other
+                     * chats are hidden.
+                     */
                     if (!this.model.get('hidden')) {
                         _.each(this.__super__.converse.chatboxviews.xget(this.model.get('id')), function (view) {
                             view.hide();
