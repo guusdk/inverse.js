@@ -93,7 +93,7 @@
             },
 
             ChatBoxView: {
-                show: function (ev) {
+                _show: function (focus) {
                     /* With inVerse, we only have one chat visible at any one
                      * time. So before opening a chat, we make sure all other
                      * chats are hidden.
@@ -103,7 +103,7 @@
                             view.hide();
                             view.model.set({'hidden': true});
                         });
-                        return this.__super__.show.apply(this, arguments);
+                        return this.__super__._show.apply(this, arguments);
                     }
                 }
             }
