@@ -40,9 +40,9 @@ require.config({
         "strophe.rsm":              "node_modules/converse.js/node_modules/strophejs-plugins/rsm/strophe.rsm",
         "strophe.vcard":            "node_modules/converse.js/node_modules/strophejs-plugins/vcard/strophe.vcard",
         "text":                     "node_modules/converse.js/node_modules/text/text",
-        "tpl":                      "node_modules/converse.js/node_modules/requirejs-undertemplate/tpl",
+        "tpl":                      "node_modules/converse.js/node_modules/lodash-template-loader/loader",
         "typeahead":                "node_modules/converse.js/components/typeahead.js/index",
-        "underscore":               "node_modules/converse.js/node_modules/underscore/underscore",
+        "lodash":                   "node_modules/converse.js/node_modules/lodash/lodash",
         "utils":                    "node_modules/converse.js/src/utils",
         "polyfill":                 "node_modules/converse.js/src/polyfill",
         
@@ -65,8 +65,8 @@ require.config({
         "converse-vcard":           "node_modules/converse.js/src/converse-vcard",
 
         // Off-the-record-encryption
-        "bigint":               "node_modules/converse.js/src/bigint",
-        "crypto":               "node_modules/converse.js/src/crypto",
+        "bigint":               "node_modules/converse.js/3rdparty/bigint",
+        "crypto":               "node_modules/converse.js/3rdparty/crypto",
         "crypto.aes":           "node_modules/converse.js/node_modules/otr/vendor/cryptojs/aes",
         "crypto.cipher-core":   "node_modules/converse.js/node_modules/otr/vendor/cryptojs/cipher-core",
         "crypto.core":          "node_modules/converse.js/node_modules/otr/vendor/cryptojs/core",
@@ -79,7 +79,7 @@ require.config({
         "crypto.sha1":          "node_modules/converse.js/node_modules/otr/vendor/cryptojs/sha1",
         "crypto.sha256":        "node_modules/converse.js/node_modules/otr/vendor/cryptojs/sha256",
         "salsa20":              "node_modules/converse.js/node_modules/otr/build/dep/salsa20",
-        "otr":                  "node_modules/converse.js/src/otr",
+        "otr":                  "node_modules/converse.js/3rdparty/otr",
 
         // Locales paths
         "locales":   "node_modules/converse.js/src/locales",
@@ -103,7 +103,7 @@ require.config({
         "uk":        "node_modules/converse.js/locale/uk/LC_MESSAGES/converse.json",
         "zh":        "node_modules/converse.js/locale/zh/LC_MESSAGES/converse.json",
 
-        "moment_with_locales": "node_modules/converse.js/src/moment_locales",
+        "moment_with_locales": "node_modules/converse.js/3rdparty/moment_locales",
         'moment_af':        "node_modules/converse.js/node_modules/moment/locale/af",
         'moment_de':        "node_modules/converse.js/node_modules/moment/locale/de",
         'moment_es':        "node_modules/converse.js/node_modules/moment/locale/es",
@@ -189,14 +189,17 @@ require.config({
     map: {
         // '*' means all modules will get 'jquery-private'
         // for their 'jquery' dependency.
-        '*': { 'jquery': 'jquery-private' },
+        '*': {
+            'jquery': 'jquery-private',
+            "underscore": "lodash"
+         },
         // 'jquery-private' wants the real jQuery module
         // though. If this line was not here, there would
         // be an unresolvable cyclic dependency.
         'jquery-private': { 'jquery': 'jquery' }
     },
 
-    tpl: {
+    lodashLoader: {
         // Configuration for requirejs-tpl
         // Use Mustache style syntax for variable interpolation
         templateSettings: {
