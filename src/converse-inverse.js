@@ -8,19 +8,18 @@
 
 (function (root, factory) {
     define("converse-inverse", [
-            "converse-core",
             "converse-api",
             "converse-chatview",
             "converse-controlbox",
             "converse-muc"
     ], factory);
-}(this, function (converse, converse_api) {
+}(this, function (converse) {
     "use strict";
 
-    var $ = converse_api.env.jQuery,
-        _ = converse_api.env._;
+    var $ = converse.env.jQuery,
+        _ = converse.env._;
 
-    converse_api.plugins.add('inverse', {
+    converse.plugins.add('inverse', {
 
         overrides: {
             // overrides mentioned here will be picked up by converse.js's
@@ -63,10 +62,10 @@
                      * time. So before opening a chat, we make sure all other
                      * chats are hidden.
                      */
-                    var converse = this.__super__.converse;
+                    var _converse = this.__super__._converse;
                     var chatbox = this.getChatBox(attrs, true);
-                    if (!attrs.hidden && converse.connection.authenticated) {
-                        _.each(converse.chatboxviews.xget(chatbox.get('id')), function (view) {
+                    if (!attrs.hidden && _converse.connection.authenticated) {
+                        _.each(_converse.chatboxviews.xget(chatbox.get('id')), function (view) {
                             if (view.model.get('id') === 'controlbox') {
                                 return;
                             }
@@ -84,7 +83,7 @@
                      * time. So before opening a chat, we make sure all other
                      * chats are hidden.
                      */
-                    _.each(this.__super__.converse.chatboxviews.xget('controlbox'), function (view) {
+                    _.each(this.__super__._converse.chatboxviews.xget('controlbox'), function (view) {
                         view.model.save({'hidden': true});
                     });
                     this.model.save({'hidden': false});
@@ -99,7 +98,7 @@
                      * chats are hidden.
                      */
                     if (!this.model.get('hidden')) {
-                        _.each(this.__super__.converse.chatboxviews.xget(this.model.get('id')), function (view) {
+                        _.each(this.__super__._converse.chatboxviews.xget(this.model.get('id')), function (view) {
                             view.hide();
                             view.model.set({'hidden': true});
                         });
@@ -107,13 +106,6 @@
                     }
                 }
             }
-        },
-
-        initialize: function () {
-            /* The initialize function gets called as soon as the plugin is
-             * loaded by converse.js's plugin machinery.
-             */
-            var converse = this.converse;
         }
     });
 }));
