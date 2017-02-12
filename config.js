@@ -25,7 +25,7 @@ require.config({
         "jquery.browser":           "node_modules/converse.js/node_modules/jquery.browser/dist/jquery.browser",
         "jquery.easing":            "node_modules/converse.js/node_modules/jquery-easing-original/index",          // XXX: Only required for https://conversejs.org website
         "moment":                   "node_modules/converse.js/node_modules/moment/moment",
-        "pluggable":                "node_modules/converse.js/node_modules/pluggable.js/pluggable",
+        "pluggable":                "node_modules/converse.js/node_modules/pluggable.js/dist/pluggable",
         "sizzle":                   "node_modules/converse.js/node_modules/jquery/sizzle/dist/sizzle",
         "strophe":                  "node_modules/converse.js/node_modules/strophe.js/src/wrapper",
         "strophe-base64":           "node_modules/converse.js/node_modules/strophe.js/src/base64",
