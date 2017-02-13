@@ -1954,7 +1954,7 @@ div.content {
       list-style: none;
       padding-left: 0;
       text-shadow: white 0 1px 0;
-      width: 38%; }
+      width: 40%; }
       #conversejs #controlbox #controlbox-tabs li a {
         background-color: white;
         border-bottom: 1px solid #CCC;
@@ -1992,7 +1992,7 @@ div.content {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      display: inline; }
+      display: inline-block; }
     #conversejs #controlbox .fancy-dropdown.no-border {
       border: 0; }
   #conversejs #controlbox #fancy-xmpp-status-select {
@@ -2133,13 +2133,13 @@ div.content {
     display: none; }
   #conversejs #converse-roster .search-xmpp ul li.chat-info {
     padding-left: 10px; }
-  #conversejs #converse-roster .roster-filter-group {
+  #conversejs #converse-roster .roster-filter-form {
     margin: 0 1em;
     width: 100%;
     padding-right: 2em;
     /* (jQ addClass:) if input has value: */
     /* (jQ addClass:) if mouse is over the 'x' input area*/ }
-    #conversejs #converse-roster .roster-filter-group .roster-filter {
+    #conversejs #converse-roster .roster-filter-form .roster-filter {
       float: left;
       background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABNSURBVHjaXI7BDcAwCAMvyQjMyQ6dAbZiKfqoUK34g2zJh1dENIC7M8pMAPYdzAVY3d0ajNz9aypS/b5R6o+ZPdqoKgCq6h80KH3xDgBqNR97p8oAGQAAAABJRU5ErkJggg==) no-repeat right -20px center;
       border: 1px solid #999;
@@ -2149,11 +2149,11 @@ div.content {
       padding: 0;
       padding-left: 0.4em;
       width: 53%; }
-    #conversejs #converse-roster .roster-filter-group .roster-filter.x {
+    #conversejs #converse-roster .roster-filter-form .roster-filter.x {
       background-position: right 3px center; }
-    #conversejs #converse-roster .roster-filter-group .roster-filter.onX {
+    #conversejs #converse-roster .roster-filter-form .roster-filter.onX {
       cursor: pointer; }
-    #conversejs #converse-roster .roster-filter-group .state-type {
+    #conversejs #converse-roster .roster-filter-form .state-type {
       float: left;
       border: 1px solid #999;
       font-size: calc(14px - 2px);
@@ -2162,7 +2162,7 @@ div.content {
       padding: 0;
       padding-left: 0.4em;
       width: 53%; }
-    #conversejs #converse-roster .roster-filter-group .filter-type {
+    #conversejs #converse-roster .roster-filter-form .filter-type {
       display: table-cell;
       float: right;
       font-size: calc(14px - 2px);
@@ -2237,7 +2237,6 @@ div.content {
         margin-left: 5px; }
       #conversejs #converse-roster .roster-contacts dd a.remove-xmpp-contact {
         float: right;
-        margin-right: 1em;
         display: none;
         color: #818479; }
   #conversejs #converse-roster span.pending-contact-name {
@@ -2398,6 +2397,7 @@ div.content {
         color: #818479;
         font-size: 14px;
         height: 289px;
+        width: 100%;
         height: -webkit-calc(100% - 55px);
         height: calc(100% - 55px);
         overflow-y: auto;
