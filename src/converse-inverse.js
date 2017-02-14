@@ -7,8 +7,7 @@
 /*global Backbone, define, window */
 
 (function (root, factory) {
-    define("converse-inverse", [
-            "converse-api",
+    define(["converse-api",
             "converse-chatview",
             "converse-controlbox",
             "converse-muc"
@@ -19,7 +18,7 @@
     var $ = converse.env.jQuery,
         _ = converse.env._;
 
-    converse.plugins.add('inverse', {
+    converse.plugins.add('converse-inverse', {
 
         overrides: {
             // overrides mentioned here will be picked up by converse.js's
@@ -65,12 +64,14 @@
                     var _converse = this.__super__._converse;
                     var chatbox = this.getChatBox(attrs, true);
                     if (!attrs.hidden && _converse.connection.authenticated) {
-                        _.each(_converse.chatboxviews.xget(chatbox.get('id')), function (view) {
-                            if (view.model.get('id') === 'controlbox') {
-                                return;
+                        _.each(_converse.chatboxviews.xget(chatbox.get('id')),
+                            function (view) {
+                                if (view.model.get('id') === 'controlbox') {
+                                    return;
+                                }
+                                view.model.save({'hidden': true});
                             }
-                            view.model.save({'hidden': true});
-                        });
+                        );
                         chatbox.save({'hidden': false});
                     }
                     return this.__super__.showChat.apply(this, arguments);
