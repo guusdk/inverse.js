@@ -7,7 +7,7 @@
 /*global Backbone, define, window */
 
 (function (root, factory) {
-    define(["converse-api",
+    define(["converse-core",
             "converse-chatview",
             "converse-controlbox",
             "converse-muc"

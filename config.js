@@ -16,6 +16,7 @@ require.config({
     paths: {
         "converse-inverse":         "src/converse-inverse",
 
+        "awesomplete":              "node_modules/converse.js/node_modules/awesomplete/awesomplete",
         "backbone":                 "node_modules/converse.js/node_modules/backbone/backbone",
         "backbone.browserStorage":  "node_modules/converse.js/node_modules/backbone.browserStorage/backbone.browserStorage",
         "backbone.overview":        "node_modules/converse.js/node_modules/backbone.overview/backbone.overview",
@@ -48,7 +49,6 @@ require.config({
         "polyfill":                 "node_modules/converse.js/src/polyfill",
         
         // Converse
-        "converse-api":             "node_modules/converse.js/src/converse-api",
         "converse-bookmarks":       "node_modules/converse.js/src/converse-bookmarks",
         "converse-chatview":        "node_modules/converse.js/src/converse-chatview",
         "converse-controlbox":      "node_modules/converse.js/src/converse-controlbox",
@@ -66,21 +66,11 @@ require.config({
         "converse-vcard":           "node_modules/converse.js/src/converse-vcard",
 
         // Off-the-record-encryption
+        // "bigint":               "node_modules/otr/build/dep/bigint",
         "bigint":               "node_modules/converse.js/3rdparty/bigint",
-        "crypto":               "node_modules/converse.js/3rdparty/crypto",
-        "crypto.aes":           "node_modules/converse.js/node_modules/otr/vendor/cryptojs/aes",
-        "crypto.cipher-core":   "node_modules/converse.js/node_modules/otr/vendor/cryptojs/cipher-core",
-        "crypto.core":          "node_modules/converse.js/node_modules/otr/vendor/cryptojs/core",
-        "crypto.enc-base64":    "node_modules/converse.js/node_modules/otr/vendor/cryptojs/enc-base64",
-        "crypto.evpkdf":        "node_modules/converse.js/components/crypto-js-evanvosberg/src/evpkdf",
-        "crypto.hmac":          "node_modules/converse.js/node_modules/otr/vendor/cryptojs/hmac",
-        "crypto.md5":           "node_modules/converse.js/components/crypto-js-evanvosberg/src/md5",
-        "crypto.mode-ctr":      "node_modules/converse.js/node_modules/otr/vendor/cryptojs/mode-ctr",
-        "crypto.pad-nopadding": "node_modules/converse.js/node_modules/otr/vendor/cryptojs/pad-nopadding",
-        "crypto.sha1":          "node_modules/converse.js/node_modules/otr/vendor/cryptojs/sha1",
-        "crypto.sha256":        "node_modules/converse.js/node_modules/otr/vendor/cryptojs/sha256",
+        "crypto":               "node_modules/converse.js/node_modules/otr/build/dep/crypto",
         "salsa20":              "node_modules/converse.js/node_modules/otr/build/dep/salsa20",
-        "otr":                  "node_modules/converse.js/3rdparty/otr",
+        "otr":                  "node_modules/converse.js/node_modules/otr/build/otr",
 
         // Locales paths
         "locales":   "node_modules/converse.js/src/locales",
@@ -212,6 +202,7 @@ require.config({
 
     // define module dependencies for modules not using define
     shim: {
+        'awesomplete':          { exports: 'Awesomplete' },
         'crypto.aes':           { deps: ['crypto.cipher-core'] },
         'crypto.cipher-core':   { deps: ['crypto.enc-base64', 'crypto.evpkdf'] },
         'crypto.enc-base64':    { deps: ['crypto.core'] },

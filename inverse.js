@@ -6,18 +6,11 @@
 if (typeof define !== 'undefined') {
     /* When running tests, define is not defined. */
     define("inverse", [
-        "jquery",
-        "converse-api",
-
+        "converse-core",
         /* START: Removable components
         * --------------------
         * Any of the following components may be removed if they're not needed.
         */
-        "locales",              // Translations for converse.js. This line can be removed
-                                // to remove *all* translations, or you can modify the
-                                // file src/locales.js to include only those
-                                // translations that you care about.
-
         "converse-chatview",    // Renders standalone chat boxes for single user chat
         "converse-controlbox",  // The control box
         "converse-bookmarks",   // XEP-0048 Bookmarks
@@ -33,9 +26,10 @@ if (typeof define !== 'undefined') {
         "converse-inverse",     // Inverse plugin for converse.js
         /* END: Removable components */
 
-    ], function($, converse_api) {
-        window.converse = converse_api;
-        $(window).trigger('converse-loaded', converse_api);
-        return converse_api;
+    ], function(converse) {
+        var $ = converse.env.jQuery;
+        window.converse = converse;
+        $(window).trigger('converse-loaded', converse);
+        return converse;
     });
 }
