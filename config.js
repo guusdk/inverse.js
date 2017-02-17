@@ -37,10 +37,10 @@ require.config({
         "strophe-sha1":             "node_modules/converse.js/node_modules/strophe.js/src/sha1",
         "strophe-utils":            "node_modules/converse.js/node_modules/strophe.js/src/utils",
         "strophe-websocket":        "node_modules/converse.js/node_modules/strophe.js/src/websocket",
-        "strophe.disco":            "node_modules/converse.js/node_modules/strophejs-plugins/disco/strophe.disco",
-        "strophe.ping":             "node_modules/converse.js/node_modules/strophejs-plugins/ping/strophe.ping",
-        "strophe.rsm":              "node_modules/converse.js/node_modules/strophejs-plugins/rsm/strophe.rsm",
-        "strophe.vcard":            "node_modules/converse.js/node_modules/strophejs-plugins/vcard/strophe.vcard",
+        "strophe.disco":            "node_modules/converse.js/node_modules/strophejs-plugin-disco/strophe.disco",
+        "strophe.ping":             "node_modules/converse.js/node_modules/strophejs-plugin-ping/strophe.ping",
+        "strophe.rsm":              "node_modules/converse.js/node_modules/strophejs-plugin-rsm/strophe.rsm",
+        "strophe.vcard":            "node_modules/converse.js/node_modules/strophejs-plugin-vcard/strophe.vcard",
         "text":                     "node_modules/converse.js/node_modules/text/text",
         "tpl":                      "node_modules/converse.js/node_modules/lodash-template-loader/loader",
         "typeahead":                "node_modules/converse.js/components/typeahead.js/index",
@@ -203,19 +203,5 @@ require.config({
     // define module dependencies for modules not using define
     shim: {
         'awesomplete':          { exports: 'Awesomplete' },
-        'crypto.aes':           { deps: ['crypto.cipher-core'] },
-        'crypto.cipher-core':   { deps: ['crypto.enc-base64', 'crypto.evpkdf'] },
-        'crypto.enc-base64':    { deps: ['crypto.core'] },
-        'crypto.evpkdf':        { deps: ['crypto.md5'] },
-        'crypto.hmac':          { deps: ['crypto.core'] },
-        'crypto.md5':           { deps: ['crypto.core'] },
-        'crypto.mode-ctr':      { deps: ['crypto.cipher-core'] },
-        'crypto.pad-nopadding': { deps: ['crypto.cipher-core'] },
-        'crypto.sha1':          { deps: ['crypto.core'] },
-        'crypto.sha256':        { deps: ['crypto.core'] },
-        'bigint':               { deps: ['crypto'] },
-        'strophe.ping':         { deps: ['strophe'] },
-        'strophe.register':     { deps: ['strophe'] },
-        'strophe.vcard':        { deps: ['strophe'] }
     }
 });
