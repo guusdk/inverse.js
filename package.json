@@ -34,7 +34,7 @@
     "po2json": "^0.3.0"
   },
   "dependencies": {
-    "converse.js": "https://github.com/jcbrand/converse.js.git#e8cf903dc04ada1cfd1645dce9c8ef57db1d5867",
+    "converse.js": "https://github.com/jcbrand/converse.js.git#ae4eb994ce2a9cf64dc989dbb10d64ace3c8464d",
     "requirejs": "^2.2.0",
     "requirejs-text": "^2.0.12"
   }
