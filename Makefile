@@ -58,8 +58,8 @@ dev: stamp-bundler stamp-npm
 css: css/inverse.css
 
 css/inverse.css:: stamp-bundler sass FORCE
-	$(SASS) -I ./components/bourbon/app/assets/stylesheets/ sass/inverse.scss css/inverse.css
+	$(SASS) -I ./node_modules/converse.js/node_modules/bourbon/app/assets/stylesheets/ sass/inverse.scss css/inverse.css
 
 .PHONY: watch
 watch: stamp-bundler
-	$(SASS) --watch -I ./components/bourbon/app/assets/stylesheets/ sass/inverse.scss:css/inverse.css
+	$(SASS) --watch -I ./node_modules/converse.js/node_modules/bourbon/app/assets/stylesheets/ sass/inverse.scss:css/inverse.css

@@ -20,15 +20,11 @@ bourbon
 Backbone.Overview
 tags
 stamp-npm
-stamp-bower
 stamp-bundler
 
 # Sphinx
 docs/html
 docs/doctrees
-
-# Bower
-bower_components
 
 # Node.js
 node_modules
