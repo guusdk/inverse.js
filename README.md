@@ -28,23 +28,21 @@ Currently there aren't yet any final builds of inVerse.
 The only way to run it is to load all the individual, uncompressed files via
 require.js.
 
-Getting this to work is simply granted you have a \*nix machine with GNUMake
-installed (most will have it by default).
+Getting this to work is simple granted you have a \*nix machine with GNUMake
+installed.
 
-Then, make sure you have all the necessary dependencies installed by running:
-
-    make
-
-This will call `npm install` and install ruby gems for generating CSS from
-Sass. It'll also generate new CSS files and eventually it'll generate the final
-Javascript build file.
-
-Then start up a webserver by running
+If so you can simply run
 
     make serve
 
-Then you can open https://localhost:8001/index.html to serve inVerse.
+Various dependencies will be installed, CSS might be generated and
+eventually you should see something like this:
 
+    ./node_modules/.bin/http-server -p 8001 -c -1
+    Starting up http-server, serving ./ on: http://0.0.0.0:8001
+    Hit CTRL-C to stop the server
+
+You can then open https://localhost:8001/index.html to serve inVerse.
 
 ## Licence
 

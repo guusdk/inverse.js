@@ -25,7 +25,7 @@ help:
 FORCE:
 
 .PHONY: serve
-serve: stamp-npm
+serve: all
 	$(HTTPSERVE) -p 8001 -c -1
 
 ########################################################################
@@ -57,7 +57,7 @@ dev: stamp-bundler stamp-npm
 .PHONY: css
 css: css/inverse.css
 
-css/inverse.css:: stamp-bundler sass FORCE
+css/inverse.css:: stamp-bundler sass
 	$(SASS) -I ./node_modules/converse.js/node_modules/bourbon/app/assets/stylesheets/ sass/inverse.scss css/inverse.css
 
 .PHONY: watch
