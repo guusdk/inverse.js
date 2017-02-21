@@ -54,10 +54,11 @@ $chatbox-hover-height: 6px !default;
 $mobile_landscape_height: 450px !default;
 $mobile_portrait_length: 480px !default;
 
-$font-size-small: 12px !default;
-$font-size: 14px !default;
-$font-size-large: 16px !default;
-$legend-font-size: 16px !default;
+$font-size-tiny: 12px !default;
+$font-size-small: 14px !default;
+$font-size: 15px !default;
+$font-size-large: 17px !default;
+$legend-font-size: 17px !default;
 
 $line-height:  16px !default;
 
@@ -66,6 +67,8 @@ $chat-width: 100% !default;
 $chat-height: 100%;
 $chat-gutter: 0.5em !default;
 $minimized-chats-width: 130px !default;
+
+$padding: 1em;
 
 $mobile-chat-width: 100% !default;
 $mobile-chat-height: 400px !default;
