@@ -11,6 +11,15 @@
     }
     .chat-head {
         font-size: 20px;
+        padding: 0;
+        .user-custom-message {
+            font-size: 66%;
+            height: auto;
+            line-height: $line-height;
+        }
+        .avatar {
+            border-radius: 25%;
+        }
     }
     .chatbox {
         height: 100%;

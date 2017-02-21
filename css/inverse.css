@@ -1738,7 +1738,14 @@ div.content {
   bottom: 0;
   bottom: 0; }
 #conversejs .chat-head {
-  font-size: 20px; }
+  font-size: 20px;
+  padding: 0; }
+  #conversejs .chat-head .user-custom-message {
+    font-size: 66%;
+    height: auto;
+    line-height: 16px; }
+  #conversejs .chat-head .avatar {
+    border-radius: 25%; }
 #conversejs .chatbox {
   height: 100%;
   margin: 0;
