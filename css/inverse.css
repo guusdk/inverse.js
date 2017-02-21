@@ -1981,8 +1981,6 @@ div.content {
     text-align: left;
     padding: 0;
     padding-left: 0.3em; }
-    #conversejs #controlbox .fancy-dropdown .choose-xmpp-status {
-      width: 155px; }
     #conversejs #controlbox .fancy-dropdown .choose-xmpp-status,
     #conversejs #controlbox .fancy-dropdown .toggle-xmpp-contact-form {
       text-shadow: 0 1px 0 #ffffff;
@@ -2443,9 +2441,8 @@ div.content {
 
 #conversejs .chat-head-chatroom {
   height: 55px;
-  font-size: 20px;
-  margin-top: 0.3em; }
-  #conversejs .chat-head-chatroom .chatroom-topic {
+  font-size: 20px; }
+  #conversejs .chat-head-chatroom .chatroom-description {
     font-size: 66%;
     margin-top: 3px;
     margin-top: 0.5em; }
