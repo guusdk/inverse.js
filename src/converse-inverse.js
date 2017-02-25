@@ -106,6 +106,18 @@
                         return this.__super__._show.apply(this, arguments);
                     }
                 }
+            },
+
+            ChatRoomView: {
+                afterShown: function (focus) {
+                    /* Make sure chat rooms are scrolled down when opened
+                     */
+                    this.scrollDown();
+                    if (focus) {
+                        this.focus();
+                    }
+                    return this.__super__._show.apply(this, arguments);
+                }
             }
         }
     });
