@@ -54,7 +54,9 @@ div.content {
     ::-moz-selection {
         background-color: $highlight-color;
     }
-
+    .circle {
+        border-radius: 50%;
+    }
     .no-text-select {
         -webkit-touch-callout: none;
         @include user-select(none);

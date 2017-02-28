@@ -116,7 +116,7 @@
                     if (focus) {
                         this.focus();
                     }
-                    return this.__super__._show.apply(this, arguments);
+                    return this.__super__.afterShown.apply(this, arguments);
                 }
             }
         }

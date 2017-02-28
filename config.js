@@ -129,6 +129,7 @@ require.config({
         "chatroom_bookmark_toggle": "node_modules/converse.js/src/templates/chatroom_bookmark_toggle",
         "chatroom_features":        "node_modules/converse.js/src/templates/chatroom_features",
         "chatroom_form":            "node_modules/converse.js/src/templates/chatroom_form",
+        "chatroom_invite":          "node_modules/converse.js/src/templates/chatroom_invite",
         "chatroom_head":            "node_modules/converse.js/src/templates/chatroom_head",
         "chatroom_nickname_form":   "node_modules/converse.js/src/templates/chatroom_nickname_form",
         "chatroom_password_form":   "node_modules/converse.js/src/templates/chatroom_password_form",
