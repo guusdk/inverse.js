@@ -95,22 +95,6 @@ require.config({
         "zh":        "node_modules/converse.js/locale/zh/LC_MESSAGES/converse.json",
 
         "moment_with_locales": "node_modules/converse.js/3rdparty/moment_locales",
-        'moment_af':        "node_modules/converse.js/node_modules/moment/locale/af",
-        'moment_de':        "node_modules/converse.js/node_modules/moment/locale/de",
-        'moment_es':        "node_modules/converse.js/node_modules/moment/locale/es",
-        'moment_fr':        "node_modules/converse.js/node_modules/moment/locale/fr",
-        'moment_he':        "node_modules/converse.js/node_modules/moment/locale/he",
-        'moment_hu':        "node_modules/converse.js/node_modules/moment/locale/hu",
-        'moment_id':        "node_modules/converse.js/node_modules/moment/locale/id",
-        'moment_it':        "node_modules/converse.js/node_modules/moment/locale/it",
-        'moment_ja':        "node_modules/converse.js/node_modules/moment/locale/ja",
-        'moment_nb':        "node_modules/converse.js/node_modules/moment/locale/nb",
-        'moment_nl':        "node_modules/converse.js/node_modules/moment/locale/nl",
-        'moment_pl':        "node_modules/converse.js/node_modules/moment/locale/pl",
-        'moment_pt-br':     "node_modules/converse.js/node_modules/moment/locale/pt-br",
-        'moment_ru':        "node_modules/converse.js/node_modules/moment/locale/ru",
-        'moment_uk':        "node_modules/converse.js/node_modules/moment/locale/uk",
-        'moment_zh':        "node_modules/converse.js/node_modules/moment/locale/zh-cn",
 
         // Templates
         "action":                   "node_modules/converse.js/src/templates/action",
@@ -169,6 +153,7 @@ require.config({
         "room_panel":               "node_modules/converse.js/src/templates/room_panel",
         "roster":                   "node_modules/converse.js/src/templates/roster",
         "roster_item":              "node_modules/converse.js/src/templates/roster_item",
+        "roster_filter":            "node_modules/converse.js/src/templates/roster_filter",
         "search_contact":           "node_modules/converse.js/src/templates/search_contact",
         "select_option":            "node_modules/converse.js/src/templates/select_option",
         "status_option":            "node_modules/converse.js/src/templates/status_option",
@@ -178,6 +163,14 @@ require.config({
         "trimmed_chat":             "node_modules/converse.js/src/templates/trimmed_chat",
         "vcard":                    "node_modules/converse.js/src/templates/vcard"
     },
+
+    packages: [{
+        name: 'moment',
+        // This location is relative to baseUrl. Choose bower_components
+        // or node_modules, depending on how moment was installed.
+        location: 'node_modules/converse.js/node_modules/moment',
+        main: 'moment'
+    }],
 
     map: {
         // '*' means all modules will get 'jquery-private'
