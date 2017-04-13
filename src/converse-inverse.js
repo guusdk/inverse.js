@@ -119,6 +119,14 @@
                     return this.__super__.afterShown.apply(this, arguments);
                 }
             }
+        },
+
+        initialize: function () {
+
+            this.updateSettings({
+                sounds_path: '/node_modules/converse.js/sounds/', // New default
+                notification_icon: '/node_modules/converse.js/logo/conversejs128.png', // New default
+            });
         }
     });
 }));
