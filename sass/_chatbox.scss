@@ -34,6 +34,9 @@
         .chat-content {
             padding: 0 $padding $padding $padding;
         }
+        .chat-title {
+            line-height: 17px;
+        }
 
         form.sendXMPPMessage {
             ul {
