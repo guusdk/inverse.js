@@ -14,8 +14,8 @@
     ], factory);
 }(this, function (converse) {
     "use strict";
-
     var $ = converse.env.jQuery,
+        Strophe = converse.env.Strophe,
         _ = converse.env._;
 
     converse.plugins.add('converse-inverse', {
@@ -26,6 +26,18 @@
             // relevant objects or classes.
             //
             // new functions which don't exist yet can also be added.
+
+            areDesktopNotificationsEnabled: function () {
+                // Call with "ignore_hidden" as true, so that it doesn't check
+                // if the windowState is hidden.
+                return this.__super__.areDesktopNotificationsEnabled.call(this, true);
+            },
+
+            shouldNotifyOfMessage: function (message) {
+                var _converse = this.__super__._converse;
+                var result = this.__super__.shouldNotifyOfMessage.apply(this, arguments);
+                return result && _converse.isMessageToHiddenChat(message);
+            },
 
             ControlBoxView: {
                 close: function (ev) {
@@ -122,11 +134,23 @@
         },
 
         initialize: function () {
+            var _converse = this._converse;
 
             this.updateSettings({
                 sounds_path: '/node_modules/converse.js/sounds/', // New default
                 notification_icon: '/node_modules/converse.js/logo/conversejs128.png', // New default
             });
+
+            _converse.isMessageToHiddenChat = function (message) {
+                var jid = Strophe.getBareJidFromJid(message.getAttribute('from'));
+                var model = _converse.chatboxes.get(jid);
+                if (!_.isNil(model)) {
+                    return model.get('hidden');
+                }
+                // Not having a chat box is assume to be practically the same
+                // as it being hidden.
+                return true;
+            }
         }
     });
 }));
