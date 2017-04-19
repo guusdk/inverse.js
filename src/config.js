@@ -63,6 +63,7 @@ require.config({
         "converse-ping":            "node_modules/converse.js/src/converse-ping",
         "converse-register":        "node_modules/converse.js/src/converse-register",
         "converse-rosterview":      "node_modules/converse.js/src/converse-rosterview",
+        "converse-singleton":       "node_modules/converse.js/src/converse-singleton",
         "converse-vcard":           "node_modules/converse.js/src/converse-vcard",
 
         // Off-the-record-encryption

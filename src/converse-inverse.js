@@ -10,7 +10,8 @@
     define(["converse-core",
             "converse-chatview",
             "converse-controlbox",
-            "converse-muc"
+            "converse-muc",
+            "converse-singleton"
     ], factory);
 }(this, function (converse) {
     "use strict";
