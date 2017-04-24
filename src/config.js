@@ -18,11 +18,12 @@ require.config({
 
         "awesomplete":              "node_modules/converse.js/node_modules/awesomplete/awesomplete",
         "backbone":                 "node_modules/converse.js/node_modules/backbone/backbone",
+        "backbone.noconflict":      "node_modules/converse.js/src/backbone.noconflict",
         "backbone.browserStorage":  "node_modules/converse.js/node_modules/backbone.browserStorage/backbone.browserStorage",
         "backbone.overview":        "node_modules/converse.js/node_modules/backbone.overview/backbone.overview",
         "eventemitter":             "node_modules/converse.js/node_modules/otr/build/dep/eventemitter",
         "jquery":                   "node_modules/converse.js/node_modules/jquery/dist/jquery",
-        "jquery-private":           "node_modules/converse.js/src/jquery-private",
+        "jquery.noconflict":        "node_modules/converse.js/src/jquery.noconflict",
         "jquery.browser":           "node_modules/converse.js/node_modules/jquery.browser/dist/jquery.browser",
         "jquery.easing":            "node_modules/converse.js/node_modules/jquery-easing-original/index",          // XXX: Only required for https://conversejs.org website
         "moment":                   "node_modules/converse.js/node_modules/moment/moment",
@@ -45,6 +46,7 @@ require.config({
         "tpl":                      "node_modules/converse.js/node_modules/lodash-template-loader/loader",
         "typeahead":                "node_modules/converse.js/components/typeahead.js/index",
         "lodash":                   "node_modules/converse.js/node_modules/lodash/lodash",
+        "lodash.noconflict":        "node_modules/converse.js/src/lodash.noconflict",
         "utils":                    "node_modules/converse.js/src/utils",
         "polyfill":                 "node_modules/converse.js/src/polyfill",
         
@@ -113,6 +115,7 @@ require.config({
         "chatroom_bookmark_form":   "node_modules/converse.js/src/templates/chatroom_bookmark_form",
         "chatroom_bookmark_toggle": "node_modules/converse.js/src/templates/chatroom_bookmark_toggle",
         "chatroom_features":        "node_modules/converse.js/src/templates/chatroom_features",
+        "chatroom_disconnect":      "node_modules/converse.js/src/templates/chatroom_disconnect",
         "chatroom_form":            "node_modules/converse.js/src/templates/chatroom_form",
         "chatroom_invite":          "node_modules/converse.js/src/templates/chatroom_invite",
         "chatroom_head":            "node_modules/converse.js/src/templates/chatroom_head",
@@ -139,6 +142,7 @@ require.config({
         "login_panel":              "src/templates/login_panel",
         "login_tab":                "node_modules/converse.js/src/templates/login_tab",
         "message":                  "node_modules/converse.js/src/templates/message",
+        "help_message":             "node_modules/converse.js/src/templates/help_message",
         "new_day":                  "node_modules/converse.js/src/templates/new_day",
         "occupant":                 "node_modules/converse.js/src/templates/occupant",
         "pending_contact":          "node_modules/converse.js/src/templates/pending_contact",
@@ -174,16 +178,20 @@ require.config({
     }],
 
     map: {
-        // '*' means all modules will get 'jquery-private'
-        // for their 'jquery' dependency.
+        // '*' means all modules will get the '*.noconflict' version
+        // as their dependency.
         '*': {
-            'jquery': 'jquery-private',
-            "underscore": "lodash"
+            'jquery': 'jquery.noconflict',
+            'backbone': 'backbone.noconflict',
+            'lodash': 'lodash.noconflict',
+            'underscore': 'lodash.noconflict'
          },
-        // 'jquery-private' wants the real jQuery module
-        // though. If this line was not here, there would
+        // '*.noconflict' wants the real module
+        // If this line was not here, there would
         // be an unresolvable cyclic dependency.
-        'jquery-private': { 'jquery': 'jquery' }
+        'backbone.noconflict': { 'backbone': 'backbone' },
+        'jquery.noconflict': { 'jquery': 'jquery' },
+        'lodash.noconflict': { 'lodash': 'lodash' }
     },
 
     lodashLoader: {
