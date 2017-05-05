@@ -4,6 +4,7 @@ if (typeof(require) === 'undefined') {
      * We want to save the configuration in a variable so that we can reuse it in
      * tests/main.js.
      */
+    // eslint-disable-next-line
     require = { // jshint ignore:line
         config: function (c) {
             config = c;
@@ -47,6 +48,7 @@ require.config({
         "typeahead":                "node_modules/converse.js/components/typeahead.js/index",
         "lodash":                   "node_modules/converse.js/node_modules/lodash/lodash",
         "lodash.noconflict":        "node_modules/converse.js/src/lodash.noconflict",
+        "underscore":               "node_modules/converse.js/src/underscore-shim",
         "utils":                    "node_modules/converse.js/src/utils",
         "polyfill":                 "node_modules/converse.js/src/polyfill",
         
@@ -114,11 +116,11 @@ require.config({
         "chatroom":                 "node_modules/converse.js/src/templates/chatroom",
         "chatroom_bookmark_form":   "node_modules/converse.js/src/templates/chatroom_bookmark_form",
         "chatroom_bookmark_toggle": "node_modules/converse.js/src/templates/chatroom_bookmark_toggle",
-        "chatroom_features":        "node_modules/converse.js/src/templates/chatroom_features",
         "chatroom_disconnect":      "node_modules/converse.js/src/templates/chatroom_disconnect",
+        "chatroom_features":        "node_modules/converse.js/src/templates/chatroom_features",
         "chatroom_form":            "node_modules/converse.js/src/templates/chatroom_form",
-        "chatroom_invite":          "node_modules/converse.js/src/templates/chatroom_invite",
         "chatroom_head":            "node_modules/converse.js/src/templates/chatroom_head",
+        "chatroom_invite":          "node_modules/converse.js/src/templates/chatroom_invite",
         "chatroom_nickname_form":   "node_modules/converse.js/src/templates/chatroom_nickname_form",
         "chatroom_password_form":   "node_modules/converse.js/src/templates/chatroom_password_form",
         "chatroom_sidebar":         "node_modules/converse.js/src/templates/chatroom_sidebar",
@@ -138,11 +140,11 @@ require.config({
         "form_textarea":            "node_modules/converse.js/src/templates/form_textarea",
         "form_username":            "node_modules/converse.js/src/templates/form_username",
         "group_header":             "node_modules/converse.js/src/templates/group_header",
+        "help_message":             "node_modules/converse.js/src/templates/help_message",
         "info":                     "node_modules/converse.js/src/templates/info",
         "login_panel":              "src/templates/login_panel",
         "login_tab":                "node_modules/converse.js/src/templates/login_tab",
         "message":                  "node_modules/converse.js/src/templates/message",
-        "help_message":             "node_modules/converse.js/src/templates/help_message",
         "new_day":                  "node_modules/converse.js/src/templates/new_day",
         "occupant":                 "node_modules/converse.js/src/templates/occupant",
         "pending_contact":          "node_modules/converse.js/src/templates/pending_contact",
@@ -157,8 +159,8 @@ require.config({
         "room_item":                "node_modules/converse.js/src/templates/room_item",
         "room_panel":               "node_modules/converse.js/src/templates/room_panel",
         "roster":                   "node_modules/converse.js/src/templates/roster",
-        "roster_item":              "node_modules/converse.js/src/templates/roster_item",
         "roster_filter":            "node_modules/converse.js/src/templates/roster_filter",
+        "roster_item":              "node_modules/converse.js/src/templates/roster_item",
         "search_contact":           "node_modules/converse.js/src/templates/search_contact",
         "select_option":            "node_modules/converse.js/src/templates/select_option",
         "status_option":            "node_modules/converse.js/src/templates/status_option",
@@ -183,8 +185,7 @@ require.config({
         '*': {
             'jquery': 'jquery.noconflict',
             'backbone': 'backbone.noconflict',
-            'lodash': 'lodash.noconflict',
-            'underscore': 'lodash.noconflict'
+            'lodash': 'lodash.noconflict'
          },
         // '*.noconflict' wants the real module
         // If this line was not here, there would
