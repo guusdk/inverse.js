@@ -35,6 +35,9 @@ include
 bin
 develop-eggs
 
+# Vagrant
+.vagrant/
+
 # OSX
 .DS_Store
 
